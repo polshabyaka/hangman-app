@@ -19,8 +19,8 @@ jobs:
         with:
           poetry-version: "2.3.2"
 
-      - name: Install dependencies
-        run: poetry install 
+      - name: Install dependencies (skip installing current project)
+        run: poetry install --no-root
 
       - name: Run pytest
         run: poetry run pytest .
